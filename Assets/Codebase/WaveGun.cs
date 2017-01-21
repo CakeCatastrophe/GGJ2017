@@ -48,6 +48,7 @@ public class WaveGun : MonoBehaviour {
 			if(m_wave_target!=null) {
 				m_wave_target.WaveEnd(this);
 			}
+			m_wave_target=null;
 		}
 
 		if(m_wave_target!=null) {
@@ -147,13 +148,13 @@ public class WaveGun : MonoBehaviour {
 	void UpdateWaveColour() {
 		switch(GetWaveSpeed()) {
 			case WaveSpeed.FAST:
-				m_particle_system.startColor = Color.red;
+				m_particle_system.startColor = new Color(0.95f,0.02f,0.02f); //Color.red;
 				return;
 			case WaveSpeed.MEDIUM:
 				m_particle_system.startColor = Color.yellow;
 				return;
 			case WaveSpeed.SLOW:
-				m_particle_system.startColor = Color.blue;
+				m_particle_system.startColor = new Color(0.02f,0.02f,0.95f);//Color.blue;
 				return;
 			case WaveSpeed.STATIC:
 				m_particle_system.startColor = Color.white;
