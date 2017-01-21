@@ -35,10 +35,23 @@ public class WaveGun : MonoBehaviour {
 				m_wave_target = hit.transform.gameObject.GetComponent<WaveTarget>();
 			}
 			else {
-				m_wave_target = null;
+				m_wave_target = null; 
+			}
+			if(m_wave_target!=null) {
+				m_wave_target.WaveStart(this);
 			}
 			
 			ResetWave();
+		}
+
+		if(Input.GetMouseButtonUp(0)) {
+			if(m_wave_target!=null) {
+				m_wave_target.WaveEnd(this);
+			}
+		}
+
+		if(m_wave_target!=null) {
+			m_wave_target.WaveUpdate(this);
 		}
 
 		if(m_wave_target!=null) {
@@ -98,7 +111,7 @@ public class WaveGun : MonoBehaviour {
 		}
 	}
 
-	float GetAverageWaveTime() {
+	public float GetAverageWaveTime() {
 		if(m_previous_dir_times.Count==0) {return float.PositiveInfinity;}
 
 		float t = 0;
@@ -109,23 +122,42 @@ public class WaveGun : MonoBehaviour {
 		return t;
 	}
 
-	void UpdateWaveColour() {
+	public WaveSpeed GetWaveSpeed() {
 		float m_avg_time = GetAverageWaveTime();
 		if(m_avg_time<0.14f) {
-			m_particle_system.startColor = Color.red;
-			//m_particle_subsystem.startColor = Color.red;
+			return WaveSpeed.FAST;
 		}
 		else if(m_avg_time<0.4f) {
-			m_particle_system.startColor = Color.yellow;
-			//m_particle_subsystem.startColor = Color.yellow;
+			return WaveSpeed.MEDIUM;
 		}
 		else if(m_avg_time<float.PositiveInfinity) {
-			m_particle_system.startColor = Color.blue;
-			//m_particle_subsystem.startColor = Color.blue;
+			return WaveSpeed.SLOW;
 		}
-		else {
-			m_particle_system.startColor = Color.white;
-			//m_particle_subsystem.startColor = Color.white;
+		return WaveSpeed.STATIC;
+	}
+
+	public Color GetWaveColor() {
+		return m_particle_system.startColor;
+	}
+
+	public int GetWaveDirection() {
+		return m_wave_direction;
+	}
+
+	void UpdateWaveColour() {
+		switch(GetWaveSpeed()) {
+			case WaveSpeed.FAST:
+				m_particle_system.startColor = Color.red;
+				return;
+			case WaveSpeed.MEDIUM:
+				m_particle_system.startColor = Color.yellow;
+				return;
+			case WaveSpeed.SLOW:
+				m_particle_system.startColor = Color.blue;
+				return;
+			case WaveSpeed.STATIC:
+				m_particle_system.startColor = Color.white;
+				return;
 		}
 	}
 
@@ -134,4 +166,11 @@ public class WaveGun : MonoBehaviour {
 		m_previous_dir_times = new List<float>();
 		m_previous_wave_position = 0;
 	}
+}
+
+public enum WaveSpeed {
+	STATIC,
+	SLOW,
+	MEDIUM,
+	FAST
 }
