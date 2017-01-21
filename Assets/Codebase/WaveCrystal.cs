@@ -13,7 +13,9 @@ public class WaveCrystal : WaveTarget {
 	void Start() {
 		m_renderer = GetComponent<Renderer>();
 		m_color_timer = new GameTimer(1,false,null);
-	}
+        SetUpMats();
+
+    }
 
 	public override void WaveStart(WaveGun wavegun) {
 
@@ -32,6 +34,7 @@ public class WaveCrystal : WaveTarget {
 		}
 
 		m_previous_speed = wavegun.GetWaveSpeed();
+        base.WaveUpdate(wavegun);
 	}
 	public override void WaveEnd(WaveGun wavegun) {
 

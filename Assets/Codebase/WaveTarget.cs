@@ -1,15 +1,31 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class WaveTarget : MonoBehaviour {
 
     Color m_currentCol = Color.white;
-    public Material[] m_mats = null;
+    List<Material> m_mats = new List<Material>();
 
 	void Start () {
-	
-	}
-	
+        SetUpMats();
+    }
+    protected void SetUpMats()
+    {
+        MeshRenderer[] allMeshes = gameObject.GetComponentsInChildren<MeshRenderer>(true);
+        for (int i = 0; i < allMeshes.Length; i++)
+        {
+
+
+            m_mats.AddRange(allMeshes[i].materials);
+        }
+        allMeshes = gameObject.GetComponents<MeshRenderer>();
+        for (int i = 0; i < allMeshes.Length; i++)
+        {
+
+
+            m_mats.AddRange(allMeshes[i].materials);
+        }
+    }
 	void Update () {
 	
 	}
@@ -37,12 +53,12 @@ public class WaveTarget : MonoBehaviour {
             }
 
             m_currentCol = newCol;
-            for (int i = 0; i < m_mats.Length; i++)
+            for (int i = 0; i < m_mats.Count; i++)
             {
                 Material currentMat = m_mats[i];
                 if (currentMat != null)
                 {
-                    currentMat.SetColor("_Emission", newCol);
+                    currentMat.SetColor("_EmissionColor", newCol);
                 }
             }
         }

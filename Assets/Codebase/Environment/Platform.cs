@@ -14,6 +14,7 @@ public class Platform : WaveTarget {
     // Use this for initialization
     void Start () {
         UpdateData();
+        SetUpMats();
     }
 
     public Vector3 StartPos {
@@ -92,6 +93,7 @@ public class Platform : WaveTarget {
         {
             SetChargeLevel(m_currentChargeLevel - m_movePerSecond * Time.deltaTime);
         }
+        base.WaveUpdate(wavegun);
     }
 
     void SetChargeLevel(float newChargeLevel)
