@@ -3,6 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class WaveGun : MonoBehaviour {
+
+    static WaveGun s_instance = null;
+
+    static public WaveGun Instance
+    {
+        get
+        {
+            if (s_instance == null)
+            {
+                s_instance = GameObject.FindObjectOfType<WaveGun>();
+            }
+            return s_instance;
+        }
+    }
+
+
+    List<Objective> m_completedObjectives = new List<Objective>();
 	ParticleSystem m_particle_system;
 	ParticleSystem m_particle_subsystem;
 	UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_fps_controller;
@@ -25,7 +42,8 @@ public class WaveGun : MonoBehaviour {
 
 
 	void Start () {
-		m_wave_stationary_timer = new GameTimer(0.5f,false,ResetWave);
+        s_instance = this;
+        m_wave_stationary_timer = new GameTimer(0.5f,false,ResetWave);
 		m_audio = GetComponent<AudioSource>();
 		m_particle_system = GetComponent<ParticleSystem>();
 		//m_particle_subsystem = transform.Find("Spark").GetComponent<ParticleSystem>();
@@ -207,6 +225,29 @@ public class WaveGun : MonoBehaviour {
 		m_previous_dir_times = new List<float>();
 		m_previous_wave_position = 0;
 	}
+
+    internal bool IsObjectiveComplete(int objectiveID)
+    {
+        for (int i = 0; i < m_completedObjectives.Count; i++)
+        {
+            Objective currentObjective = m_completedObjectives[i];
+            if (currentObjective.m_objectiveID == objectiveID)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    internal void CompleteObjective(Objective currentObjective)
+    {
+        if (m_completedObjectives.Contains(currentObjective) == false)
+        {
+            Debug.Log("Objective Complete " + currentObjective.m_objectiveID);
+            m_completedObjectives.Add(currentObjective);
+        }
+    }
+
+
 }
 
 public enum WaveSpeed {
