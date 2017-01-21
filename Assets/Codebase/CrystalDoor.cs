@@ -6,6 +6,7 @@ public class CrystalDoor : MonoBehaviour {
 	Vector3 m_base_position;
 	public Vector3 m_new_position = Vector3.up;
 
+	public float m_door_time = 1;
 	GameTimer m_open_time = new GameTimer(1,false,null);
 	GameTimer m_close_time = new GameTimer(1,false,null);
 
@@ -13,6 +14,8 @@ public class CrystalDoor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		m_open_time = new GameTimer(m_door_time,false,null);
+		m_open_time = new GameTimer(m_door_time,false,null);
 		m_base_position = transform.position;
 	}
 	
