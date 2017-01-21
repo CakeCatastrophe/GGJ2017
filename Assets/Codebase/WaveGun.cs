@@ -20,9 +20,13 @@ public class WaveGun : MonoBehaviour {
 
 	WaveTarget m_wave_target;
 
+	AudioSource m_audio;
+	public AudioClip[] m_note_sounds;
+
 
 	void Start () {
 		m_wave_stationary_timer = new GameTimer(0.5f,false,ResetWave);
+		m_audio = GetComponent<AudioSource>();
 		m_particle_system = GetComponent<ParticleSystem>();
 		//m_particle_subsystem = transform.Find("Spark").GetComponent<ParticleSystem>();
 		m_fps_controller = transform.parent.parent.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
@@ -49,6 +53,7 @@ public class WaveGun : MonoBehaviour {
 				m_wave_target.WaveEnd(this);
 			}
 			m_wave_target=null;
+			ResetWave();
 		}
 
 		if(m_wave_target!=null) {
@@ -66,12 +71,15 @@ public class WaveGun : MonoBehaviour {
 		m_fps_controller.enabled = !is_waving;
 
 
-		UpdateWaveDirection();
+		UpdateWaveDirection(is_waving);
 		UpdateWaveColour();
+		UpdateSound();
 		UpdateCursorState(is_waving);
 	}
 
-	void UpdateWaveDirection() {
+	void UpdateWaveDirection(bool is_waving) {
+		if(!is_waving) {return;}
+
 		m_direction_timer+=Time.deltaTime;
 
 		if(transform.localPosition.x<m_previous_wave_position && m_wave_direction==1) {
@@ -109,6 +117,38 @@ public class WaveGun : MonoBehaviour {
 		}
 		else {
 			Cursor.lockState = CursorLockMode.Locked;
+		}
+	}
+
+	void UpdateSound() {
+		if(m_note_sounds.Length<3) {
+			return;
+		}
+
+		m_audio.mute = false;
+
+		switch(GetWaveSpeed()) {
+			case WaveSpeed.FAST:
+				if(m_audio.clip!=m_note_sounds[0]) {
+					m_audio.clip = m_note_sounds[0];
+					m_audio.Play();
+				}
+				return;
+			case WaveSpeed.MEDIUM:
+				if(m_audio.clip!=m_note_sounds[1]) {
+					m_audio.clip = m_note_sounds[1];
+					m_audio.Play();
+				}
+				return;
+			case WaveSpeed.SLOW:
+				if(m_audio.clip!=m_note_sounds[2]) {
+					m_audio.clip = m_note_sounds[2];
+					m_audio.Play();
+				}
+				return;
+			default:
+				m_audio.mute = true;
+				return;
 		}
 	}
 
