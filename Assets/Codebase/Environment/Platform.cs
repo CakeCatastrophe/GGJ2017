@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Platform : MonoBehaviour {
+public class Platform : WaveTarget {
     
 
    public Vector3 m_minOffset = new Vector3(0,-1,0);
     public Vector3 m_maxOffset = new Vector3(0, 1, 0);
-    float m_movePerSecond = 1;
+    float m_movePerSecond = 0.2f;
     Vector3 m_anchorPos;
     Vector3 m_startPos;
     Vector3 m_endPos;
@@ -72,12 +72,23 @@ public class Platform : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey (KeyCode.Alpha1))
+	public override void WaveUpdate (WaveGun wavegun) {
+        if (wavegun.GetWaveSpeed()==WaveSpeed.SLOW)
         {
             SetChargeLevel(m_currentChargeLevel + m_movePerSecond * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+        /*
+        if (wavegun.GetWaveSpeed()==WaveSpeed.MEDIUM)
+        {
+            if(m_currentChargeLevel>0.6) {
+                SetChargeLevel(m_currentChargeLevel - m_movePerSecond * Time.deltaTime);
+            }
+            else if(m_currentChargeLevel<0.4) {
+                SetChargeLevel(m_currentChargeLevel + m_movePerSecond * Time.deltaTime);
+            }
+        }
+        */
+        if (wavegun.GetWaveSpeed()==WaveSpeed.FAST)
         {
             SetChargeLevel(m_currentChargeLevel - m_movePerSecond * Time.deltaTime);
         }

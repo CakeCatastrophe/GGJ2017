@@ -7,8 +7,8 @@ public class WaveGun : MonoBehaviour {
 	ParticleSystem m_particle_subsystem;
 	UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_fps_controller;
 
-	Vector3 m_wave_min_pos = new Vector3(-0.5f,-0.4f,0);
-	Vector3 m_wave_max_pos = new Vector3(0.5f,-0.4f,0);
+	Vector3 m_wave_min_pos = new Vector3(-0.2f,-0.4f,0);
+	Vector3 m_wave_max_pos = new Vector3(0.2f,-0.4f,0);
 
 	int m_wave_direction = 1;
 	float m_direction_timer = 0;
