@@ -340,7 +340,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -414,7 +414,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -438,9 +438,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_note_sounds:
-  - {fileID: 8300000, guid: 021b3450624692f428abc3797688015f, type: 3}
-  - {fileID: 8300000, guid: b4472859ad185994fb301dd7b786cf75, type: 3}
-  - {fileID: 8300000, guid: 24fd7f5aa8fe6f74aad3f7dc59dbf8bb, type: 3}
+  - {fileID: 8300000, guid: 446fdb80e3a3ed14bab4ae39a94c4c6e, type: 3}
+  - {fileID: 8300000, guid: bd15fe370f3cd7348a6ec64affdfc9fd, type: 3}
+  - {fileID: 8300000, guid: f93bbc33fd8ed6a49921af5d7ce601e0, type: 3}
 --- !u!114 &11492748
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -124,22 +124,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11431888, guid: e66e10d6db2913442b65f372823c6358, type: 2}
-      propertyPath: m_note_sounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: f93bbc33fd8ed6a49921af5d7ce601e0, type: 3}
-    - target: {fileID: 11431888, guid: e66e10d6db2913442b65f372823c6358, type: 2}
-      propertyPath: m_note_sounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: bd15fe370f3cd7348a6ec64affdfc9fd, type: 3}
-    - target: {fileID: 11431888, guid: e66e10d6db2913442b65f372823c6358, type: 2}
-      propertyPath: m_note_sounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 446fdb80e3a3ed14bab4ae39a94c4c6e, type: 3}
-    - target: {fileID: 8291360, guid: e66e10d6db2913442b65f372823c6358, type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e66e10d6db2913442b65f372823c6358, type: 2}
   m_IsPrefabParent: 0
@@ -248,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5879033c7e4325146bade44b22ddb210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mats: []
   m_required_speed: 2
 --- !u!23 &536729412
 MeshRenderer:
@@ -369,6 +352,10 @@ Prefab:
     - target: {fileID: 11493212, guid: 6901ce17848f8e040874c222fec90657, type: 2}
       propertyPath: m_maxOffset.z
       value: 0.26567745
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493212, guid: 6901ce17848f8e040874c222fec90657, type: 2}
+      propertyPath: m_can_reset
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6901ce17848f8e040874c222fec90657, type: 2}
