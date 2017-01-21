@@ -29,12 +29,13 @@ public class WaveCrystal : WaveTarget {
 		}
 
 		if(m_color_timer.IsComplete()) {
-			m_renderer.material.color = wavegun.GetWaveColor();
+			//m_renderer.material.color = wavegun.GetWaveColor();
 			m_unlocked = wavegun.GetWaveSpeed()==m_required_speed;
-		}
+            base.WaveUpdate(wavegun);
+        }
 
 		m_previous_speed = wavegun.GetWaveSpeed();
-        base.WaveUpdate(wavegun);
+       
 	}
 	public override void WaveEnd(WaveGun wavegun) {
 
