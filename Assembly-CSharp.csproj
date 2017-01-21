@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Codebase\GameTimer.cs" />
      <Compile Include="Assets\Codebase\WaveGun.cs" />
+     <Compile Include="Assets\Codebase\WaveTarget.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
