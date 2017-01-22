@@ -454,7 +454,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121526}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
   m_LocalScale: {x: 0.0254, y: 0.0254, z: 0.0254}
   m_Children: []
   m_Father: {fileID: 485156}
@@ -478,8 +478,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.147007, y: 0.55, z: 18.757}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.14, y: -10.93, z: 16.272}
+  m_LocalScale: {x: 2.575336, y: 2.5753345, z: 2.5753345}
   m_Children:
   - {fileID: 428760}
   - {fileID: 477822}
@@ -766,9 +766,9 @@ MonoBehaviour:
   m_mesh2: {fileID: 2345380}
   m_mesh3: {fileID: 2341334}
   m_mesh10: {fileID: 2395890}
-  m_col1: {r: 1, g: 0, b: 0, a: 1}
-  m_col2: {r: 0.9448277, g: 1, b: 0, a: 1}
-  m_col3: {r: 0.24137926, g: 0, b: 1, a: 1}
+  m_col1: {r: 0.3241377, g: 0, b: 1, a: 1}
+  m_col2: {r: 1, g: 0, b: 0, a: 1}
+  m_col3: {r: 1, g: 0.9724138, b: 0, a: 1}
   m_col10: {r: 1, g: 1, b: 1, a: 1}
 --- !u!198 &19823196
 ParticleSystem:

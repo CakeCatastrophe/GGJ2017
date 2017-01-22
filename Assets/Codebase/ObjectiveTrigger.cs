@@ -107,7 +107,10 @@ public class ObjectiveTrigger: MonoBehaviour {
         {
             Objective currentObjective = m_completesObjectives[i];
             player.CompleteObjective(currentObjective);
-
+            if (CenterGem.Instance != null)
+            {
+                CenterGem.Instance.ObjectiveCompleted(currentObjective.m_objectiveID);
+            }
         }
     }
     void OnTriggerEnter(Collider other)

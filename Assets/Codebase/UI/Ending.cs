@@ -43,6 +43,7 @@ public class Ending : MonoBehaviour {
         switch (newState)
         {
             case EndingStates.StartEnding:
+            UIController.Instance.SetGameElements(false);
             break;
             case EndingStates.Story1:
             m_lblEndInfo.color = new Color(m_lblEndInfo.color.r, m_lblEndInfo.color.g, m_lblEndInfo.color.b, 1);
