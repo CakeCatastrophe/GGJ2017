@@ -32,7 +32,9 @@ public class CrystalDoor : MonoBehaviour {
 			transform.position = Vector3.Lerp(m_base_position,m_base_position+m_new_position,Mathf.Clamp(m_open_time.GetProgress(),0,1));
 			m_close_time.ResetTime();
 
-			m_reset_timer.Update();
+			if(m_resets) {
+				m_reset_timer.Update();
+			}
 		}
 		else {
 			if(m_open || (m_resets && m_reset_timer.IsComplete())) {

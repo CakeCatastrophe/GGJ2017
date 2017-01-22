@@ -473,7 +473,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11408432, guid: 655c0ca504733b6498b8ba3f9d632943, type: 2}
       propertyPath: m_resets
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11408432, guid: 655c0ca504733b6498b8ba3f9d632943, type: 2}
       propertyPath: m_reset_time
