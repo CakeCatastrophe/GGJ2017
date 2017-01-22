@@ -16747,6 +16747,14 @@ Prefab:
       propertyPath: m_required_speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4000011605465984, guid: f663a808877d211439080624a1ad74e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -62.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012583822034, guid: f663a808877d211439080624a1ad74e0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -62.98
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f663a808877d211439080624a1ad74e0, type: 2}
   m_IsPrefabParent: 0
