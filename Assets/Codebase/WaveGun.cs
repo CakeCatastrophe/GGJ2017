@@ -43,6 +43,8 @@ public class WaveGun : MonoBehaviour {
 	public bool m_has_target = false;
 	float m_max_range = 10;
 
+	CharacterController m_char_controller;
+
 
 	void Start () {
         s_instance = this;
@@ -51,17 +53,26 @@ public class WaveGun : MonoBehaviour {
 		m_particle_system = GetComponent<ParticleSystem>();
 		//m_particle_subsystem = transform.Find("Spark").GetComponent<ParticleSystem>();
 		m_fps_controller = transform.parent.parent.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+		
+		m_char_controller = m_fps_controller.GetComponent<CharacterController>();
 	}
 	
 	void Update () {
-		if(!m_fps_controller.GetComponent<CharacterController>().isGrounded) {
+		if(!m_char_controller.isGrounded) {
 			return;
 		}
+
+		RaycastHit underfoot;
+		Physics.Raycast(transform.position,Vector3.down,out underfoot,1);
 
 		if(Input.GetMouseButtonDown(0)) {
 			RaycastHit hit;
 			if(Physics.Raycast(transform.position,transform.forward,out hit,m_max_range)){
 				m_wave_target = hit.transform.gameObject.GetComponent<WaveTarget>();
+
+				if(m_wave_target!=null && underfoot.transform!=null  && m_wave_target.gameObject==underfoot.transform.gameObject) {
+					m_wave_target = null;
+				}
 			}
 			else {
 				m_wave_target = null; 

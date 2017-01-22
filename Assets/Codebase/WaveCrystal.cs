@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WaveCrystal : WaveTarget {
 	public WaveSpeed m_required_speed;
-	public Renderer m_renderer;
+	Renderer m_renderer;
 
 	public bool m_unlocked = false;
 	WaveSpeed m_previous_speed = WaveSpeed.STATIC;
