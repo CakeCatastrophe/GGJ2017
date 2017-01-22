@@ -469,6 +469,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 655c0ca504733b6498b8ba3f9d632943, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &658911834
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.147007
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 18.757
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &758632787
 Prefab:
   m_ObjectHideFlags: 0
@@ -768,6 +810,8 @@ MonoBehaviour:
   - m_objectiveID: 2
   m_completesObjectives:
   - m_objectiveID: 3
+  m_death_particle: {fileID: 0}
+  m_particle_isnt: {fileID: 0}
 --- !u!135 &1088048475
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -780,48 +824,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.75
   m_Center: {x: 0, y: -1.63, z: 0}
---- !u!1001 &1149586602
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -15.147007
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19.754713
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 485156, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3b5979b297469a8449f1a98038652f69, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1366426389
 Prefab:
   m_ObjectHideFlags: 0
@@ -963,6 +965,8 @@ MonoBehaviour:
   m_requiredObjectives: []
   m_completesObjectives:
   - m_objectiveID: 2
+  m_death_particle: {fileID: 0}
+  m_particle_isnt: {fileID: 0}
 --- !u!1 &1713026705
 GameObject:
   m_ObjectHideFlags: 0
