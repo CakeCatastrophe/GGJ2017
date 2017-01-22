@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Codebase\Crosshair.cs" />
      <Compile Include="Assets\Codebase\CrystalDoor.cs" />
+     <Compile Include="Assets\Codebase\Destroyer.cs" />
      <Compile Include="Assets\Codebase\Environment\Platform.cs" />
      <Compile Include="Assets\Codebase\GameTimer.cs" />
      <Compile Include="Assets\Codebase\Objective.cs" />

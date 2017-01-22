@@ -35,7 +35,7 @@ public class WaveGun : MonoBehaviour {
 
 	GameTimer m_wave_stationary_timer;
 
-	WaveTarget m_wave_target;
+	public WaveTarget m_wave_target;
 
 	AudioSource m_audio;
 	public AudioClip[] m_note_sounds;
