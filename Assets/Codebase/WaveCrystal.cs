@@ -3,9 +3,9 @@ using System.Collections;
 
 public class WaveCrystal : WaveTarget {
 	public WaveSpeed m_required_speed;
-	Renderer m_renderer;
+	public Renderer m_renderer;
 
-	bool m_unlocked = false;
+	public bool m_unlocked = false;
 	WaveSpeed m_previous_speed = WaveSpeed.STATIC;
 
 	GameTimer m_color_timer;
@@ -42,5 +42,9 @@ public class WaveCrystal : WaveTarget {
 	}
 	public bool GetIsUnlocked() {
 		return m_unlocked;
+	}
+
+	public void SetColor(Color c) {
+		base.UpdateMatCols(c);
 	}
 }

@@ -42,7 +42,7 @@ public class WaveTarget : MonoBehaviour {
 	public virtual void WaveEnd(WaveGun wavegun) {
 
 	}
-    void UpdateMatCols(Color newCol)
+    public void UpdateMatCols(Color newCol)
     {
 
         if (m_mats != null)
