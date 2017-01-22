@@ -61,7 +61,7 @@ public class WaveGun : MonoBehaviour {
 		if(!m_char_controller.isGrounded) {
 			return;
 		}
-
+		
 		RaycastHit underfoot;
 		Physics.Raycast(transform.position,Vector3.down,out underfoot,1);
 
