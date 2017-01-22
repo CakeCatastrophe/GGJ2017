@@ -1393,11 +1393,15 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 927bc84c6f2e3a942a6ed8a94807cacb, type: 2}
     - target: {fileID: 11442858, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
       propertyPath: m_required_speed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13564244, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
       propertyPath: m_Radius
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422842, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
+      propertyPath: m_completesObjectives.Array.data[0].m_objectiveID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
@@ -2175,11 +2179,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11442858, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
       propertyPath: m_required_speed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 13564244, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
       propertyPath: m_Radius
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422842, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
+      propertyPath: m_completesObjectives.Array.data[0].m_objectiveID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a6c2288cf20b7d40a3b895e9d0deac8, type: 2}
