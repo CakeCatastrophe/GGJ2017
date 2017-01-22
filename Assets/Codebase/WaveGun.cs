@@ -35,13 +35,13 @@ public class WaveGun : MonoBehaviour {
 
 	GameTimer m_wave_stationary_timer;
 
-	WaveTarget m_wave_target;
+	public WaveTarget m_wave_target;
 
 	AudioSource m_audio;
 	public AudioClip[] m_note_sounds;
 
 	public bool m_has_target = false;
-	float m_max_range = 10;
+	float m_max_range = 8;
 
 	CharacterController m_char_controller;
 
@@ -61,7 +61,7 @@ public class WaveGun : MonoBehaviour {
 		if(!m_char_controller.isGrounded) {
 			return;
 		}
-		
+
 		RaycastHit underfoot;
 		Physics.Raycast(transform.position,Vector3.down,out underfoot,1);
 

@@ -14,6 +14,12 @@ public class ObjectiveTrigger: MonoBehaviour {
 
     public List<Objective> m_completesObjectives = new List<Objective>();
 
+    public GameObject m_death_particle;
+
+    public GameObject m_particle_isnt;
+
+    GameTimer m_awsome_timer = new GameTimer(3,false,null);
+
     // Use this for initialization
     void Start() {
 
@@ -54,6 +60,17 @@ public class ObjectiveTrigger: MonoBehaviour {
     internal virtual void PlayCompleteActions(WaveGun player)
     {
         CompleteObjectives(player);
+        for (int i = 0; i < m_crystalLinks.Count; i++)
+        {
+            WaveCrystal crystalLink = m_crystalLinks[i];
+            crystalLink.GetComponent<Collider>().enabled = false;
+            WaveGun.Instance.m_wave_target = null;
+        }
+
+        if(m_death_particle!=null && !m_awsome_timer.IsComplete()) {
+            m_awsome_timer.Update();
+            m_particle_isnt = (GameObject)Instantiate(m_death_particle,transform.position,transform.rotation);
+        }
 
 
     }
