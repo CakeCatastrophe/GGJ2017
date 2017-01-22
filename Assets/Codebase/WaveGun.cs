@@ -40,6 +40,9 @@ public class WaveGun : MonoBehaviour {
 	AudioSource m_audio;
 	public AudioClip[] m_note_sounds;
 
+	public bool m_has_target = false;
+	float m_max_range = 10;
+
 
 	void Start () {
         s_instance = this;
@@ -57,7 +60,7 @@ public class WaveGun : MonoBehaviour {
 
 		if(Input.GetMouseButtonDown(0)) {
 			RaycastHit hit;
-			if(Physics.Raycast(transform.position,transform.forward,out hit)){
+			if(Physics.Raycast(transform.position,transform.forward,out hit,m_max_range)){
 				m_wave_target = hit.transform.gameObject.GetComponent<WaveTarget>();
 			}
 			else {
@@ -97,6 +100,7 @@ public class WaveGun : MonoBehaviour {
 		UpdateWaveColour();
 		UpdateSound();
 		UpdateCursorState(is_waving);
+		UpdateTarget();
 	}
 
 	void UpdateWaveDirection(bool is_waving) {
@@ -221,6 +225,16 @@ public class WaveGun : MonoBehaviour {
 			case WaveSpeed.STATIC:
 				m_particle_system.startColor = Color.white;
 				return;
+		}
+	}
+
+	void UpdateTarget() {
+		RaycastHit hit;
+		if(Physics.Raycast(transform.position,transform.forward,out hit,m_max_range)){
+			m_has_target = hit.transform.gameObject.GetComponent<WaveTarget>()!=null;
+		}
+		else {
+			m_has_target = false;
 		}
 	}
 

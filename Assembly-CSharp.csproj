@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Codebase\Crosshair.cs" />
      <Compile Include="Assets\Codebase\CrystalDoor.cs" />
      <Compile Include="Assets\Codebase\Environment\Platform.cs" />
      <Compile Include="Assets\Codebase\GameTimer.cs" />
