@@ -20,6 +20,14 @@ public class ObjectiveTrigger: MonoBehaviour {
 
     GameTimer m_awsome_timer = new GameTimer(3,false,null);
 
+    public AudioClip m_waah;
+
+    bool m_has_played_audio = false;
+
+    bool m_blah = false;
+
+
+
     // Use this for initialization
     void Start() {
 
@@ -29,6 +37,7 @@ public class ObjectiveTrigger: MonoBehaviour {
     void Update() {
 
         CrystalUpdate();
+         
     }
     protected void CrystalUpdate()
     {
@@ -39,8 +48,14 @@ public class ObjectiveTrigger: MonoBehaviour {
                 if (CheckCrystals() == true && AreRequiredObjectivesComplete(WaveGun.Instance))
                 {
                     PlayCompleteActions(WaveGun.Instance);
+                    m_hasTriggered = true;
                 }
             }
+        }
+
+        if(m_hasTriggered && m_death_particle!=null && !m_awsome_timer.IsComplete()) {
+            m_awsome_timer.Update();
+            m_particle_isnt = (GameObject)Instantiate(m_death_particle,transform.position,transform.rotation);
         }
     }
     bool CheckCrystals()
@@ -67,9 +82,9 @@ public class ObjectiveTrigger: MonoBehaviour {
             WaveGun.Instance.m_wave_target = null;
         }
 
-        if(m_death_particle!=null && !m_awsome_timer.IsComplete()) {
-            m_awsome_timer.Update();
-            m_particle_isnt = (GameObject)Instantiate(m_death_particle,transform.position,transform.rotation);
+        if(!m_has_played_audio) {
+            m_has_played_audio = true;
+            GetComponent<AudioSource>().PlayOneShot(m_waah);
         }
 
 
