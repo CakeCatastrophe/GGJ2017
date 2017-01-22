@@ -10,6 +10,10 @@ public class WaveCrystal : WaveTarget {
 
 	GameTimer m_color_timer;
 
+	public AudioClip m_audio_thing;
+
+	bool m_played_sound = false;
+
 	void Start() {
 		m_renderer = GetComponent<Renderer>();
 		m_color_timer = new GameTimer(1,false,null);
@@ -26,12 +30,18 @@ public class WaveCrystal : WaveTarget {
 		}
 		else {
 			m_color_timer.ResetTime();
+			m_played_sound = false;
 		}
 
 		if(m_color_timer.IsComplete()) {
 			//m_renderer.material.color = wavegun.GetWaveColor();
 			m_unlocked = wavegun.GetWaveSpeed()==m_required_speed;
             base.WaveUpdate(wavegun);
+
+			if(m_played_sound == false && m_unlocked) {
+				m_played_sound = true;
+				GetComponent<AudioSource>().PlayOneShot(m_audio_thing);
+			}
         }
 
 		m_previous_speed = wavegun.GetWaveSpeed();
