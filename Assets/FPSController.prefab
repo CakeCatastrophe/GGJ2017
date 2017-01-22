@@ -12,7 +12,8 @@ GameObject:
   - 199: {fileID: 19971206}
   - 114: {fileID: 11431888}
   - 82: {fileID: 8291360}
-  m_Layer: 0
+  - 135: {fileID: 13558060}
+  m_Layer: 2
   m_Name: WaveGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,6 +643,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!135 &13558060
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.65
+  m_Center: {x: 0.000025391579, y: 0.00015211105, z: 2.33111}
 --- !u!143 &14352878
 CharacterController:
   m_ObjectHideFlags: 1

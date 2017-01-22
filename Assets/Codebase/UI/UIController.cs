@@ -17,10 +17,20 @@ public class UIController : MonoBehaviour {
     }
 
     public Ending m_endPage = null;
+    public GameObject m_playerObject = null;
+    public GameObject m_crossHairObject = null;
+    public GameObject m_menuCam = null;
     // Use this for initialization
     void Start () {
         s_instance = this;
 
+    }
+
+    internal void SetGameElements(bool gameObjOn)
+    {
+        m_playerObject.SetActive(gameObjOn);
+        m_crossHairObject.SetActive(gameObjOn);
+        m_menuCam.SetActive(!gameObjOn);
     }
 	
 	// Update is called once per frame

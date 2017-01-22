@@ -11,7 +11,7 @@ public class SplashScreen : MonoBehaviour {
     // Use this for initialization
     void Start () {
         m_startTime = Time.time;
-
+        UIController.Instance.SetGameElements(false);
     }
 	
 	// Update is called once per frame

@@ -18,7 +18,8 @@ public class StartScreen : MonoBehaviour {
 	}
     void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("main_scene");
+        UIController.Instance.SetGameElements(true);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("main_scene");
         Destroy(gameObject);
     }
 }
