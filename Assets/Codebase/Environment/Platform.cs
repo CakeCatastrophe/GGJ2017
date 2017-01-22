@@ -33,8 +33,18 @@ public class Platform : WaveTarget {
         m_reset_timer.Update();
         if(m_reset_timer.IsComplete()) {
             m_reset_movement_timer.Update();
-            m_currentChargeLevel = 0.5f;
             transform.position = Vector3.Lerp(m_last_set_position,m_anchorPos,Mathf.Clamp(m_reset_movement_timer.GetProgress(),0,1));
+           
+            float diff = (m_anchorPos - m_startPos).magnitude;
+            float range = (m_minOffset - m_maxOffset).magnitude;
+            if (range == 0)
+            {
+                Debug.LogError("why 0 range?");
+            }
+            else
+            {
+                m_currentChargeLevel = (diff / range);
+            }
         }
     }
 
