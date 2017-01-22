@@ -22,11 +22,15 @@ public class ObjectiveTrigger: MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        CrystalUpdate();
+    }
+    protected void CrystalUpdate()
+    {
         if (m_hasTriggered == false)
         {
-            if (m_crystalLinks != null&& m_crystalLinks.Count>0)
+            if (m_crystalLinks != null && m_crystalLinks.Count > 0)
             {
-                if (CheckCrystals()==true && AreRequiredObjectivesComplete(WaveGun.Instance))
+                if (CheckCrystals() == true && AreRequiredObjectivesComplete(WaveGun.Instance))
                 {
                     PlayCompleteActions(WaveGun.Instance);
                 }
@@ -65,7 +69,7 @@ public class ObjectiveTrigger: MonoBehaviour {
         }
         return true;
     }
-    void CompleteObjectives(WaveGun player)
+    protected void CompleteObjectives(WaveGun player)
     {
         for (int i = 0; i < m_completesObjectives.Count; i++)
         {
@@ -79,7 +83,7 @@ public class ObjectiveTrigger: MonoBehaviour {
         ActOnCollision(other);
     }
 
-    void ActOnCollision(Collider other)
+    protected void ActOnCollision(Collider other)
     {
         if (m_useCollision == true && other.gameObject == WaveGun.Instance.gameObject)
         {
