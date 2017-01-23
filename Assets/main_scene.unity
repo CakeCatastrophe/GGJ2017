@@ -2419,10 +2419,6 @@ Prefab:
       value: 
       objectReference: {fileID: 329466888}
     - target: {fileID: 11452624, guid: 1ccd412b02431114e97de528fa2fa1b8, type: 2}
-      propertyPath: m_crossHairObject
-      value: 
-      objectReference: {fileID: 711892232}
-    - target: {fileID: 11452624, guid: 1ccd412b02431114e97de528fa2fa1b8, type: 2}
       propertyPath: m_menuCam
       value: 
       objectReference: {fileID: 1254034277}
@@ -8000,10 +7996,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300018, guid: 2517e810ae19b384eabb4d5028b306c5, type: 3}
---- !u!1 &711892232 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 138866, guid: 1ccd412b02431114e97de528fa2fa1b8, type: 2}
-  m_PrefabInternal: {fileID: 214773277}
 --- !u!1 &718165568
 GameObject:
   m_ObjectHideFlags: 0
