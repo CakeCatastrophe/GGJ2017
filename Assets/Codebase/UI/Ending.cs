@@ -19,7 +19,7 @@ public class Ending : MonoBehaviour {
     EndingStates m_nextState = EndingStates.None;
     public Text m_lblEndInfo = null;
     public CanvasGroup m_blackBack = null;
-    public float m_timeForStates = 2;
+    public float m_timeForStates = 3;
 
     float m_stateStart = 0;
     // Use this for initialization
@@ -49,10 +49,18 @@ public class Ending : MonoBehaviour {
             m_lblEndInfo.color = new Color(m_lblEndInfo.color.r, m_lblEndInfo.color.g, m_lblEndInfo.color.b, 1);
             m_lblEndInfo.SetAllDirty();
             m_lblEndInfo.text = "And so ...";
+            CameraPositions.Instance.MoveObjectToPosition(CameraPositions.Instance.m_camera, CameraPositions.Instance.m_camend1);
+            CameraPositions.Instance.MoveObjectToPosition(CameraPositions.Instance.m_opera, CameraPositions.Instance.m_operaend1);
+            CameraPositions.Instance.SetAnim("look");
+
             break;
             case EndingStates.Story2:
             m_lblEndInfo.SetAllDirty();
             m_lblEndInfo.text = "It Ended";
+            CameraPositions.Instance.MoveObjectToPosition(CameraPositions.Instance.m_camera, CameraPositions.Instance.m_camend2);
+            CameraPositions.Instance.SetAnim("magic");
+            CameraPositions.Instance.TurnLightOn();
+            CameraPositions.Instance.MoveObjectToPosition(CameraPositions.Instance.m_opera, CameraPositions.Instance.m_operaend2);
             break;
             case EndingStates.TheEnd:
             m_blackBack.alpha = 1;
@@ -84,7 +92,21 @@ public class Ending : MonoBehaviour {
         {
             case EndingStates.StartEnding:          
             case EndingStates.Story1:
+            {
+                if (timeInState > 3)
+                {
+                    SetNextState(newState + 1);
+                }
+                break;
+            }
             case EndingStates.Story2:
+            {
+                if (timeInState > 6)
+                {
+                    SetNextState(newState + 1);
+                }
+                break;
+            }
             case EndingStates.TheEnd:
             case EndingStates.Close:
             {
