@@ -56,12 +56,21 @@ public class CameraPositions : MonoBehaviour {
 
     internal void TurnLightOn()
     {
+        SetEmmissiveVal(1);
+    }
+    internal void TurnLightOff()
+    {
+        SetEmmissiveVal(0.001f);
+    }
+    void SetEmmissiveVal(float emmisiveVal)
+    {
+        Color emmisiveCol = Color.white * emmisiveVal;
        Material[] allMats =   m_operaRender.sharedMaterials;
 
         for (int i = 0; i < allMats.Length; i++)
         {
           
-            allMats[i].SetColor("_EmissionColor", Color.white);
+            allMats[i].SetColor("_EmissionColor", emmisiveCol);
             
         }
         m_operaRender.sharedMaterials = allMats;

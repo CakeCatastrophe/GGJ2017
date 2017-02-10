@@ -72,6 +72,7 @@ public class Ending : MonoBehaviour {
             m_lblEndInfo.CrossFadeAlpha(0, 1, false);
             break;
             case EndingStates.LoadEndScreen:
+            CameraPositions.Instance.TurnLightOff();
             UnityEngine.SceneManagement.SceneManager.LoadScene(m_sceneName);
 
             break;

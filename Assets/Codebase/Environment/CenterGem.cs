@@ -74,6 +74,7 @@ public class CenterGem : MonoBehaviour {
                 currentMat.SetColor("_EmissionColor", newCol);
             }
         }
+        currentMesh.materials = mats;
     }
 
 
