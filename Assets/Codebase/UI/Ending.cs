@@ -30,7 +30,7 @@ public class Ending : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+   
         if (m_nextState != EndingStates.None && m_nextState != m_currentState)
         {
             StartState(m_nextState);
@@ -88,6 +88,8 @@ public class Ending : MonoBehaviour {
 
     void UpdateState(EndingStates newState)
     {
+
+      
         float timeInState = Time.time- m_stateStart  ;
         switch (newState)
         {

@@ -58,7 +58,15 @@ public class WaveGun : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(!m_char_controller.isGrounded) {
+
+        if (Input.GetKey(KeyCode.R) &&
+     (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+     )
+        {
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+        }
+        if (!m_char_controller.isGrounded) {
 			return;
 		}
 
